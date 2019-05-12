@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-bird-radio-options',
@@ -8,7 +8,7 @@ import { FormGroup } from '@angular/forms';
 })
 export class BirdRadioOptionsComponent implements OnInit {
 
-  @Input() optionsGroup: FormGroup;
+  @Input() optionsControl: FormControl;
 
   constructor() { }
 

@@ -1,20 +1,27 @@
 <div class="main-page-container">
-  <app-bird [birdLatinName]="bird-latin-name"></app-bird>
-  <button type="button" (click)="showHelp()">Zobraz Napovedu</button>
-  <button type="button" (click)="hideHelp()">Skri Napovedu</button>
+  <app-bird-image [birdLatinName]="bird-latin-name"></app-bird-image>
+  <button type="button" (click)="showHelp()">Potrebujem Napovedu</button>
+  <!-- <button type="button" (click)="hideHelp()">Skri Napovedu</button> -->
   <div class="radio-options-or-string">
 
-    <form (ngSubmit)="correct()">
+    <form [formGroup]="birdQuestionForm" (ngSubmit)="correct()">
       <!-- <form [formGroup]="profileForm" (ngSubmit)="onSubmit()"> -->
       <!-- bird radio options -->
 
+      <div class="bird-name-options-container" *ngIf="displayOptions">
+          <h3>Vtak na obrazku je</h3>
+          <hr>
+          <input type="radio" formControlName="birdNameOptions" value="trueName" checked>Vtak<br>
+          <input type="radio" formControlName="birdNameOptions" value="falseName1">Vtak 1<br>
+          <input type="radio" formControlName="birdNameOptions" value="falseName2">Vtak 2<br>
+      </div>
 
-      <app-bird-radio-options *ngIf="displayOptions" [optionsGroup]="birdOptions"></app-bird-radio-options>
+      <!-- <app-bird-radio-options  [optionsControl]="birdNameOptions"></app-bird-radio-options> -->
 
-      <label for="bird-name">Nazov Vtaka: </label>
-      <input type="text" name="bird-name" id="bird-name">
-      
-      <br>
+      <div class="bird-name-string-container" *ngIf="!displayOptions">
+          <label for="bird-name">Nazov Vtaka: </label>
+          <input type="text" formControlName="birdNameString" id="bird-name">
+      </div>
 
       <!-- full string search -->
       <button type="submit">Potvrd</button>

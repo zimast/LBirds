@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-bird',
+  selector: 'app-bird-image',
   templateUrl: './bird.component.html',
   styleUrls: ['./bird.component.css']
 })
