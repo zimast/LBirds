@@ -1,0 +1,43 @@
+<div class="main-page-container">
+  <app-bird [birdLatinName]="bird-latin-name"></app-bird>
+  <button type="button" (click)="showHelp()">Zobraz Napovedu</button>
+  <button type="button" (click)="hideHelp()">Skri Napovedu</button>
+  <div class="radio-options-or-string">
+
+    <form (ngSubmit)="correct()">
+      <!-- <form [formGroup]="profileForm" (ngSubmit)="onSubmit()"> -->
+      <!-- bird radio options -->
+
+
+      <app-bird-radio-options *ngIf="displayOptions" [optionsGroup]="birdOptions"></app-bird-radio-options>
+
+      <label for="bird-name">Nazov Vtaka: </label>
+      <input type="text" name="bird-name" id="bird-name">
+      
+      <br>
+
+      <!-- full string search -->
+      <button type="submit">Potvrd</button>
+    </form>
+
+    <div class="correction-form" *ngIf="incorrectString">
+      <div class="input-value"></div>
+      <div class="correct-value"></div>
+
+      <h3>Bola odpoved spravna ?</h3>
+
+      <form>
+        <label>
+          <input type="radio" value="yes" formControlName="was-string-correct">
+          <span>Ano</span>
+        </label>
+        <label>
+          <input type="radio" value="no" formControlName="was-string-correct">
+          <span>Nie</span>
+        </label>
+      </form>
+      <button type="submit">Pomylila som sa len v pismenkach</button>
+    </div>
+
+  </div>
+</div>
