@@ -43,11 +43,6 @@ export class GetRandomBirdService {
       numberOfImages: 2
     },
     {
-      name: 'pizmovka velka',
-      latinName: 'cairina-moschata',
-      numberOfImages: 2
-    },
-    {
       name: 'kachna divoka',
       latinName: 'anas-platyrhynchos',
       numberOfImages: 2
