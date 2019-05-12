@@ -25,6 +25,8 @@ export class MainComponent implements OnInit {
 
   public valueToCheck: string;
 
+  public youTestedAll = false;
+
   // TEMP
   private howManyBirdsWeHave: number = 1;
 
@@ -37,6 +39,10 @@ export class MainComponent implements OnInit {
   ngOnInit() {
     this.setupForm();
     this.bird = this.getRandomBirdService.giveMeBird();
+    if (this.bird === null) {
+      this.youTestedAll = true;
+      return;
+    }
     this.birdImagePath = '../../assets/images/' + this.bird.latinName + '/' + this.getRandomBirdService.getRndInteger(1, this.bird.numberOfImages) + '.jpg';
   }
 
@@ -57,6 +63,10 @@ export class MainComponent implements OnInit {
       this.correctAnswers++;
       this.birdQuestionForm.reset();
       this.bird = this.getRandomBirdService.giveMeBird();
+      if (this.bird === null) {
+        this.youTestedAll = true;
+        return;
+      }
       this.birdImagePath = '../../assets/images/' + this.bird.latinName + '/' + this.getRandomBirdService.getRndInteger(1, this.bird.numberOfImages) + '.jpg';
     } else {
       this.incorrectString = true;
@@ -68,6 +78,10 @@ export class MainComponent implements OnInit {
     this.incorrectString = false;
     this.birdQuestionForm.reset();
     this.bird = this.getRandomBirdService.giveMeBird();
+    if (this.bird === null) {
+      this.youTestedAll = true;
+      return;
+    }
     this.birdImagePath = '../../assets/images/' + this.bird.latinName + '/' + this.getRandomBirdService.getRndInteger(1, this.bird.numberOfImages) + '.jpg';
   }
 
@@ -76,6 +90,10 @@ export class MainComponent implements OnInit {
     this.incorrectString = false;
     this.birdQuestionForm.reset();
     this.bird = this.getRandomBirdService.giveMeBird();
+    if (this.bird === null) {
+      this.youTestedAll = true;
+      return;
+    }
     this.birdImagePath = '../../assets/images/' + this.bird.latinName + '/' + this.getRandomBirdService.getRndInteger(1, this.bird.numberOfImages) + '.jpg';
   }
 

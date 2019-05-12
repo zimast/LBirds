@@ -1,4 +1,4 @@
-<div class="main-page-container">
+<div class="main-page-container" *ngIf="!youTestedAll">
 
   <div class="answers-count-container">
     <div class="correct-answers">Spravne odpovede: {{correctAnswers}}</div>
@@ -45,4 +45,7 @@
     </div>
 
   </div>
+</div>
+<div *ngIf="youTestedAll">
+  <h1>HOTOVO 1 REFRESHNI STRANKU</h1>
 </div>

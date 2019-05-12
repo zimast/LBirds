@@ -215,13 +215,28 @@ export class GetRandomBirdService {
     { name: "zebricka pestra", latinName: "taeniopygia-guttata", numberOfImages: 2 }, 
     { name: "panenka bronzova", latinName: "lonchura-striata", numberOfImages: 1 }, 
     { name: "chuvicka japonska", latinName: "lonchura-striata-domestica", numberOfImages: 1 }
-  ]
+  ];
+
+  public tested: number = 0;
+  public all: number = this.birds.length;
+
+  public modifiedBirds: Bird[] = [];
 
   constructor() { }
 
   public giveMeBird() {
-    const birdIndex: number = this.getRndInteger(0, this.birds.length - 1);
-    return this.birds[birdIndex]
+    if (this.birds.length === 0) {
+      return null;
+    } else {
+      const birdIndex: number = this.getRndInteger(0, this.birds.length - 1);
+      const birdToReturn: Bird = this.birds[birdIndex];
+      console.log('this.birds.length', this.birds.length);
+      console.log('this.modifiedBirds.length', this.modifiedBirds.length);
+      this.modifiedBirds = this.birds.splice(birdIndex, 1);
+      console.log('this.birds.length', this.birds.length);
+      console.log('this.modifiedBirds.length', this.modifiedBirds.length);
+      return birdToReturn;
+    }
   }
 
   public getRndInteger(min: number, max: number) {
