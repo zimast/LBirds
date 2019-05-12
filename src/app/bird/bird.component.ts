@@ -7,11 +7,12 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class BirdComponent implements OnInit {
 
-  @Input() public birdLatinName: string;
+  @Input() public birdImagePath: string;
 
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }

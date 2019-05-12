@@ -1,21 +1,23 @@
 DONE:
 
 - pštros dvouprstý (Struthio camelus)
+- emu hnědý (Dromaius novaehollandiae)
+- kasuár přilbový (Casuarius casuarius)
+- husa velká (Anser anser)
+- husa polní (Anser fabalis)
+- pizmovka domaci (Cairina moschata)
+- pizmovka velka (Cairina moschata)
+- kachna divoká (Anas platyrhynchos)  
+- kopřivka obecná (Anas sterpera)
+- polák velký (Aythya ferina)
+- polák chocholačka (Aythya fuligula)
+- kachnička mandarinská (Aix galericulata)
+- kachnička karolinská (Aix sponsa)
+- krocan divoký (Meleagris gallopavo)
+- krocan domácí (Meleagris gallopavo)
 
 ---
-pštros dvouprstý (Struthio camelus)
-emu hnědý (Dromaius novaehollandiae), 
-kasuár přilbový (Casuarius casuarius)  
-husa velká (Anser anser)  
-husa polní (Anser fabalis)
-pižmovka (p. domácí + p. velká Cairina moschata)  
-kachna divoká (Anas platyrhynchos)  
-kopřivka obecná (Anas sterpera), 
-polák velký (Aythya ferina), 
-polák chocholačka (Aythya fuligula), 
-kachnička mandarinská (Aix galericulata),
-kachnička karolinská (Aix sponsa), 
-krocan divoký (Meleagris gallopavo) + krocan domácí  
+  
 tetřev hlušec (Tetrao urogallus)  
 jeřábek lesní (Bonasa bonasia), 
 kur bankivský (Gallus gallus),
@@ -83,7 +85,6 @@ zoborožec + dvojzoborožec (Bucerotidae)
 datel černý (Dryocopus martius)  
 strakapoud velký (Dendrocopos major)  
 tukan (Ramphastos)  
-
 vlaštovka obecná (Hirundo rustica)  
 jiřička obecná (Delichon urbica)  
 konipas (Motacilla)  
@@ -120,4 +121,3 @@ astrild vlnkovaný (Estrilda astrild)
 amada (amadina) Gouldové (Chloebia gouldiae)  
 zebřička pestrá (Taeniopygia guttata)  
 panenka bronzová + chůvička japonská (Lonchura striata f. domestica)  
-

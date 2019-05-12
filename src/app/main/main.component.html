@@ -1,10 +1,18 @@
 <div class="main-page-container">
-  <app-bird-image [birdLatinName]="bird-latin-name"></app-bird-image>
-  <button type="button" (click)="showHelp()">Potrebujem Napovedu</button>
+
+  <div class="answers-count-container">
+    <div class="correct-answers">Spravne odpovede: {{correctAnswers}}</div>
+    <div class="bad-answers">Spatne odpovede: {{badAnswers}}</div>
+    <hr>
+    <div class="correct-with-help">Spravne odpovede s napovedou: {{correctAnswersWithHelp}}</div>
+  </div>
+
+  <app-bird-image [birdImagePath]="birdImagePath"></app-bird-image>
+  <!-- <button type="button" (click)="showHelp()" class="btn btn-info">Potrebujem Napovedu</button> -->
   <!-- <button type="button" (click)="hideHelp()">Skri Napovedu</button> -->
   <div class="radio-options-or-string">
 
-    <form [formGroup]="birdQuestionForm" (ngSubmit)="correct()">
+    <form [formGroup]="birdQuestionForm" (ngSubmit)="correct()" class="form-group">
       <!-- <form [formGroup]="profileForm" (ngSubmit)="onSubmit()"> -->
       <!-- bird radio options -->
 
@@ -18,32 +26,22 @@
 
       <!-- <app-bird-radio-options  [optionsControl]="birdNameOptions"></app-bird-radio-options> -->
 
-      <div class="bird-name-string-container" *ngIf="!displayOptions">
-          <label for="bird-name">Nazov Vtaka: </label>
-          <input type="text" formControlName="birdNameString" id="bird-name">
+      <div class="bird-name-string-container form-group" *ngIf="!displayOptions">
+          <label for="bird-name">Nazov Vtaka:       </label>
+          <input class="form-control" type="text" formControlName="birdNameString" id="bird-name">
       </div>
 
       <!-- full string search -->
-      <button type="submit">Potvrd</button>
+      <button type="submit" class="btn btn-primary">Potvrd</button>
     </form>
 
-    <div class="correction-form" *ngIf="incorrectString">
-      <div class="input-value"></div>
-      <div class="correct-value"></div>
+    <div class="correction-form" *ngIf="incorrectString && !displayOptions">
+      <div class="input-value">Vlozena hodnota: {{valueToCheck}}</div>
+      <div class="correct-value">Spravna hodnota: {{bird.name}}</div>
 
-      <h3>Bola odpoved spravna ?</h3>
-
-      <form>
-        <label>
-          <input type="radio" value="yes" formControlName="was-string-correct">
-          <span>Ano</span>
-        </label>
-        <label>
-          <input type="radio" value="no" formControlName="was-string-correct">
-          <span>Nie</span>
-        </label>
-      </form>
-      <button type="submit">Pomylila som sa len v pismenkach</button>
+      <h3>Bola odpoved takmer spravna ?</h3>
+      <button class="btn btn-success" type="button" (click)="itWasCorrect()">Pomylila som sa len v pismenkach</button>
+      <button class="btn btn-danger" type="button" (click)="itWasIncorrect()">Nevedela som</button>
     </div>
 
   </div>
